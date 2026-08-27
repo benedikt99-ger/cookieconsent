@@ -24,7 +24,64 @@ class CookieconsentController extends FrontendController
     public function getTitle()
     {
 		// 2026bene todo neuer titel
-        return Registry::getLang()->translateString("WITHDRAWAL_FORM", Registry::getLang()->getBaseLanguage(), false);
+        return Registry::getLang()->translateString("COOKIECONSENT_FORM", Registry::getLang()->getBaseLanguage(), false);
+    }
+	
+    public function getCookieconsentReasons()
+    {
+        $aCategories = Registry::getConfig()->getConfigParam('CookieconsentCategories');
+        return (!empty($aCategories) ? $aCategories : false);
+    }	
+
+    public function getCookieComplianceCategories()
+    {
+        return CookieHelper::getCookieComplianceCategories();
+    }
+
+    public function hasCookieConsented()
+    {
+        return CookieHelper::hasCookieConsented();
+    }
+
+    public static function isCookieCategoryMandatory($sCategory)
+    {
+        if ($sCategory === 'ESSENTIAL'){
+            return true;
+        }
+    }
+
+    public function isCookieCategoryEnabled($sCategory)
+    {
+
+        if (self::isCookieCategoryMandatory($sCategory)){
+            return true;
+        }
+
+        $cookie = $_COOKIE['cc-categories'];
+
+        if ($cookie) {
+
+            if ($cookie == 'ALL') {
+                return true;
+            }elseif ($cookie == 'NONE') {
+                return false;
+            }else{
+                $categories = json_decode($cookie);
+                return in_array($sCategory, $categories);
+            }
+        }
+
+        /** @var agcookiecompliance_oxviewconfig $viewConfig */
+		// $viewConfig = Registry::getConfig()->getActiveView()->getViewConfig();
+        // in case of no decision cookies are set when opt-out or info is set
+        /*
+		return in_array(
+            $viewConfig->getCookieComplianceModuleSetting( 'sConsentType'),
+            ['opt-out','info']
+        );		
+		*/
+		return true;
+
     }
 
     public function getBreadCrumb()

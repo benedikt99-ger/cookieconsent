@@ -35,11 +35,12 @@ $aModule = [
             'type' => 'str','value' => '','position' => 1
         ],
         [
-            'group' => 'CookieConsentMain','name' => 'CookieConsentReasons',
+            'group' => 'CookieConsentMain','name' => 'CookieconsentCategories',
             'type' => 'aarr','value' => [
-                'small' => 'zu klein',
-                'large' => 'zu groß',
-                'dislike' => 'nicht gefallen'
+                'ESSENTIAL' => 'Technisch notwendig',
+                'ANALYTICS' => 'Analyse',
+                'MARKETING' => 'Marketing',
+				'UNCATEGORIZED' => 'ohne Kategorie',
             ],'position' => 2
         ],
         [

@@ -13,7 +13,7 @@ $aModule = [
     'title'       => 'cookieconsent für OXID 7',
     'description' => 'cookieconsent für OXID 7',
     'thumbnail'   => 'bn_logo.png',
-    'version'     => '0.1.0',
+    'version'     => '0.3.0',
     'author'      => 'Nünemann',
     'url'         => 'https://github.com/benedikt99-ger/cookieconsent',
     'email'       => 'benedikt@nuenemann.de',
@@ -28,13 +28,9 @@ $aModule = [
     ],	
    'settings' => [
         [
-            'group' => 'CookieConsentMain','name' => 'CookieconsentSitekey',
+            'group' => 'CookieConsentMain','name' => 'CookieconsentInfoLink',
             'type' => 'str','value' => '','position' => 0
-        ],
-        [
-            'group' => 'CookieConsentMain','name' => 'CookieconsentSecret',
-            'type' => 'str','value' => '','position' => 1
-        ],
+        ]
         [
             'group' => 'CookieConsentMain','name' => 'CookieconsentCategories',
             'type' => 'aarr','value' => [
@@ -43,10 +39,6 @@ $aModule = [
                 'MARKETING' => 'Marketing',
 				'UNCATEGORIZED' => 'ohne Kategorie',
             ],'position' => 2
-        ],
-        [
-            'group' => 'CookieConsentMain','name' => 'CookieconsentEmail',
-            'type' => 'str','value' => '','position' => 3
         ]
     ]
 ];

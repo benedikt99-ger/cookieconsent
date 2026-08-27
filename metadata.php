@@ -18,7 +18,7 @@ $aModule = [
     'url'         => 'https://github.com/benedikt99-ger/cookieconsent',
     'email'       => 'benedikt@nuenemann.de',
 	'extend' => [
-		\OxidEsales\Eshop\Core\ViewConfig::class => Core\ViewConfig::class,
+		\OxidEsales\Eshop\Core\ViewConfig::class => \nuenemann\cookieconsent\Core\ViewConfig::class,
 	],
     'controllers' => [
 		'cookieconsent'  => \nuenemann\cookieconsent\Controller\CookieconsentController::class,

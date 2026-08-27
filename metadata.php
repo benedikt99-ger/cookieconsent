@@ -20,7 +20,7 @@ $aModule = [
 	'extend' => [
 	],
     'controllers' => [
-
+		'cookieconsent'  => \nuenemann\cookieconsent\Controller\CookieconsentController::class,
     ],	
     'templates' => [
 

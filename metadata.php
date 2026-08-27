@@ -18,6 +18,7 @@ $aModule = [
     'url'         => 'https://github.com/benedikt99-ger/cookieconsent',
     'email'       => 'benedikt@nuenemann.de',
 	'extend' => [
+		\OxidEsales\Eshop\Core\ViewConfig::class => Core\ViewConfig::class,
 	],
     'controllers' => [
 		'cookieconsent'  => \nuenemann\cookieconsent\Controller\CookieconsentController::class,
@@ -27,11 +28,11 @@ $aModule = [
     ],	
    'settings' => [
         [
-            'group' => 'CookieConsentMain','name' => 'CookieConsentSitekey',
+            'group' => 'CookieConsentMain','name' => 'CookieconsentSitekey',
             'type' => 'str','value' => '','position' => 0
         ],
         [
-            'group' => 'CookieConsentMain','name' => 'CookieConsentSecret',
+            'group' => 'CookieConsentMain','name' => 'CookieconsentSecret',
             'type' => 'str','value' => '','position' => 1
         ],
         [
@@ -44,7 +45,7 @@ $aModule = [
             ],'position' => 2
         ],
         [
-            'group' => 'CookieConsentMain','name' => 'CookieConsentEmail',
+            'group' => 'CookieConsentMain','name' => 'CookieconsentEmail',
             'type' => 'str','value' => '','position' => 3
         ]
     ]

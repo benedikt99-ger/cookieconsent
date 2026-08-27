@@ -6,18 +6,38 @@ use OxidEsales\Eshop\Core\Registry;
 
 class ViewConfig extends ViewConfig_parent
 {
+
+	
+    public function getCookieconsentReasons()
+    {
+        $aCategories = Registry::getConfig()->getConfigParam('CookieconsentCategories');
+        return (!empty($aCategories) ? $aCategories : false);
+    }	
+
+    public function getCookieComplianceCategories()
+    {
+        $aCategories = Registry::getConfig()->getConfigParam('CookieconsentCategories');
+        return (!empty($aCategories) ? $aCategories : false);
+    }
+
+
+    public static function isCookieCategoryMandatory($sCategory)
+    {
+        if ($sCategory === 'ESSENTIAL'){
+            return true;
+        }
+    }
 	
     public function isCookieCategoryEnabled($sCategory)
     {
 
+		// ESSENTIAL immer true
         if (self::isCookieCategoryMandatory($sCategory)){
             return true;
         }
 
         $cookie = $_COOKIE['cc-categories'];
-
         if ($cookie) {
-
             if ($cookie == 'ALL') {
                 return true;
             }elseif ($cookie == 'NONE') {
@@ -28,7 +48,7 @@ class ViewConfig extends ViewConfig_parent
             }
         }
 
-        /** @var agcookiecompliance_oxviewconfig $viewConfig */
+        /** @var $viewConfig */
 		// $viewConfig = Registry::getConfig()->getActiveView()->getViewConfig();
         // in case of no decision cookies are set when opt-out or info is set
         /*
@@ -37,7 +57,7 @@ class ViewConfig extends ViewConfig_parent
             ['opt-out','info']
         );		
 		*/
-		return true;
+		return false;
 
     }	
 	

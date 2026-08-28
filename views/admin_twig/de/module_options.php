@@ -4,9 +4,8 @@ $style = '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff
 $aLang = [
     'charset' => 'UTF-8',
     'SHOP_MODULE_GROUP_CookieConsentMain' => $style . 'Einstellungen',
-    'SHOP_MODULE_CookieConsentSitekey' => "reCaptcha v2 Site Key <a href='https://www.google.com/recaptcha/admin' target='_blank'>( ? )</a>",
-    'SHOP_MODULE_CookieConsentSecret' => "reCaptcha v2 Secret <a href='https://www.google.com/recaptcha/admin' target='_blank'>( ? )</a>",
-    'SHOP_MODULE_CookieConsentReasons' => "eigene Gründe, Format:<br/>abkuerzung => ausgeschriebener Name",
+    'SHOP_MODULE_CookieconsentInfoLink' => "Informations Link ",
+    'SHOP_MODULE_CookieconsentCategories' => "Kategorien, Format:<br/>abkuerzung => ausgeschriebener Name",
     'SHOP_MODULE_CookieConsentEmail' => "abweichendes Empfänger (sonst Adresse für Bestellungen)",
     'SHOP_MODULE_CookieConsentCC' => "weitere CC Empfänger",
 ];

@@ -4,10 +4,10 @@
     {{ parent() }}
 
 {#	
-$oViewConf->getModuleUrl('cookieconsent','relative/path/js/cookieconsent.js')	
-{{ script({ include: "js/cookieconsent.js", priority: 11, dynamic: __oxid_include_dynamic }) }}
+Nicht so: {{ script({ include: "js/cookieconsent.js", priority: 11, dynamic: __oxid_include_dynamic }) }}
+Funktioniert nicht: {{ style({ include: oViewConf.getModuleUrl('cookieconsent', 'out/src/css/cookieconsent.css') }) }}
 #}
-{{ style({ include: oViewConf.getModuleUrl('cookieconsent', 'out/src/css/cookieconsent.css') }) }}
+<link rel="stylesheet" href="{{ oViewConf.getModuleUrl('cookieconsent', 'out/src/css/cookieconsent.css') }}">
 <script type="module" src="{{ oViewConf.getModuleUrl('cookieconsent', 'out/src/js/cookieconsent.js') }}"></script>
 <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-categories " style="display:none">
  {% include_content 'a_cookieconsent' %}	

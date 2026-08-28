@@ -1,0 +1,27 @@
+{% block analytics_scripts %}
+    {{ parent() }}
+
+{{ script({ include: "js/cookieconsent.js", priority: 11, dynamic: __oxid_include_dynamic }) }}
+<div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-categories " style="display:none">
+ {% include_content 'a_cookieconsent' %}	
+
+    <div class="form">
+         <ul class="cc-categories">
+<li class="cc-category">
+<div class="custom-control custom-checkbox"><input value="ESSENTIAL" type="checkbox" class="custom-control-input" id="cc-checkESSENTIAL" checked="checked" disabled="">
+<label class="custom-control-label" for="cc-checkESSENTIAL">Technisch notwendig</label></div>
+</li>
+<li class="cc-category">
+<div class="custom-control custom-checkbox"><input value="ANALYTICS" type="checkbox" class="custom-control-input" id="cc-checkANALYTICS" {% if oViewConf.isCookieCategoryEnabled('ANALYTICS') == true %}checked="checked"{% endif %}>
+<label class="custom-control-label" for="cc-checkANALYTICS">Analyse</label></div>
+</li>
+		 
+		 </ul>
+        <div class="cc-btn-group btn-group d-flex">
+            <button class="cc-btn cc-allow-all w-100">Alle erlauben</button>
+            <button class="cc-btn cc-save w-100">Speichern</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

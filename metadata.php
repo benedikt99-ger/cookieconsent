@@ -23,14 +23,12 @@ $aModule = [
     'controllers' => [
 		'cookieconsent'  => \nuenemann\cookieconsent\Controller\CookieconsentController::class,
     ],	
-    'templates' => [
-
-    ],	
+    'templates' => [    ],	
    'settings' => [
         [
             'group' => 'CookieConsentMain','name' => 'CookieconsentInfoLink',
             'type' => 'str','value' => '','position' => 0
-        ]
+        ],
         [
             'group' => 'CookieConsentMain','name' => 'CookieconsentCategories',
             'type' => 'aarr','value' => [
